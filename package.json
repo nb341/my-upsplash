@@ -13,6 +13,8 @@
     "cypress:open": "cypress open"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
     "postcss": "^7",
     "postcss-flexbugs-fixes": "^4",
     "postcss-preset-env": "^6.7.0",

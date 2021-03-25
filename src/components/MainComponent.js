@@ -4,7 +4,7 @@ import Page from './PageComponent';
 
 const Main = ()=>{
     return(
-        <div>
+        <div className="container mx-auto p-6">
             <Page/>
         </div>
     )
