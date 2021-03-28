@@ -19,6 +19,7 @@ class Modal extends Component{
         this.handleSubmit = this.handleSubmit.bind(this);
         this.closeModal = this.closeModal.bind(this);
         this.input = React.createRef();
+        
     }
 
    
@@ -47,7 +48,7 @@ class Modal extends Component{
                 <form onSubmit={this.handleSubmit}>
                 <div className="flex flex-col">
                     <label className="text-xs text-gray-700 py-2">Label</label>
-                    <input className="border-2 border-gray-300 bg-white h-12 rounded-lg text-xs focus:outline-none py-2" 
+                    <input className="border-2 border-gray-300 bg-white h-12 rounded-lg text-xs focus:outline-none pl-2 py-2" 
                     type="text"
                    
                     ref={this.input}
@@ -56,7 +57,7 @@ class Modal extends Component{
                 </div>
                 <div className="flex flex-col">
                     <label className="text-xs text-gray-700 py-2">Photo URL</label>
-                    <input className="border-2 border-gray-300 bg-white h-12 rounded-lg text-xs focus:outline-none py-2" 
+                    <input className="border-2 border-gray-300 bg-white h-12 rounded-lg text-xs focus:outline-none pl-2 py-2" 
                     type="text"
                     ref={this.input}
                     placeholder="https://unsplash.com/photos/8ZcYCX5hmQ8"

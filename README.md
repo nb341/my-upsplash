@@ -1,41 +1,12 @@
-# my-unsplash-challenge
-
-Empty project.
-
-## Building and running on localhost
-
-First install dependencies:
-
-```sh
-npm install
-```
-
-To run in hot module reloading mode:
-
-```sh
-npm start
-```
-
-To create a production build:
-
-```sh
-npm run build-prod
-```
-
-## Running
-
-Open the file `dist/index.html` in your browser
-
-## Testing
-
-To run cypress:
-
-```sh
-npm cypress:open
-```
-
-## Credits
-
-Made with [createapp.dev](https://createapp.dev/)
-
 # my-upsplash
+
+## Steps to set up this project locally as currently is.
+1. git clone repo.
+2. cd my-unspash && yarn install (or npm install (delete yarn.lock first))
+3. python3 -m venv venv
+4. source venv/bin/activate (activates virtual environment to install requirements for backend)
+5. pip install -r requirements.txt (important make sure your virtual environment is running, you will see ) 
+6. cd api && python manage.py migrate
+7. ./manage.py runserver
+8. go to new terminal
+9. cd .. && yarn start
