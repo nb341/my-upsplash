@@ -141,8 +141,10 @@ CORS_ALLOW_HEADERS = [
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:1234',
     'http://127.0.0.1:8000',
+    'http://127.0.0.1:1234'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:1234',
+    'http://127.0.0.1:1234'
 ]

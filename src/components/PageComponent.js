@@ -21,14 +21,30 @@ const Page = ()=>{
         .catch(err=> console.log(err))
 
     },[]);
-    const img = images.map((item,i)=>{
-        return (
-            <img height="80" width="80" key={i} src={item.photo_url.toString()} />
-            // <label key={i}>{item.label}</label>
+    const Img = (props) =>{
+        console.log(props.photo_url)
+        return <img className={props.className} src={props.photo_url} />
+    }
 
-        );
-    });
-    return(
+    const isPrime = (num)=>{
+        if(num==0 || num==1) return false;
+        if(num==2) return true;
+        for(let i=2; i*i>=num;i++){
+            if(num%i==0) return false;
+        }
+        return true;
+    }
+
+    const img = images.map((item,i)=>{
+        console.log(i)
+        if(isPrime(i+1)) {
+            return <Img className="w-96" id={i} photo_url={item.photo_url}/>
+         } else 
+         {
+             return <Img className="w-96"/>
+            }
+    })
+        return(
         <div>
            {img}
         </div>

@@ -18,8 +18,9 @@ class Modal extends Component{
         // this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.closeModal = this.closeModal.bind(this);
-        this.input = React.createRef();
-        
+        this.inputLabel = React.createRef();
+        this.inputUrl = React.createRef();
+
     }
 
    
@@ -36,7 +37,9 @@ class Modal extends Component{
     }
     handleSubmit(e){
         e.preventDefault();
-        console.log(this.input.current.value)
+        console.log(this.inputLabel.current.value)
+        console.log(this.inputUrl.current.value);
+        this.closeModal()
     }
 
 
@@ -51,7 +54,7 @@ class Modal extends Component{
                     <input className="border-2 border-gray-300 bg-white h-12 rounded-lg text-xs focus:outline-none pl-2 py-2" 
                     type="text"
                    
-                    ref={this.input}
+                    ref={this.inputLabel}
                     placeholder="Fruitless Basket"
                     />
                 </div>
@@ -59,8 +62,8 @@ class Modal extends Component{
                     <label className="text-xs text-gray-700 py-2">Photo URL</label>
                     <input className="border-2 border-gray-300 bg-white h-12 rounded-lg text-xs focus:outline-none pl-2 py-2" 
                     type="text"
-                    ref={this.input}
-                    placeholder="https://unsplash.com/photos/8ZcYCX5hmQ8"
+                    ref={this.inputUrl}
+                    placeholder="https://images.unsplash.com/photo-1593642532400-2682810df593"
                     />
                 </div>
                 <div className="flex justify-end py-4">

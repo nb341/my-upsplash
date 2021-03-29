@@ -10,3 +10,6 @@
 7. ./manage.py runserver
 8. go to new terminal
 9. cd .. && yarn start
+
+## To do
+1. Add redux for better statement of forms and retrieval of data from api
