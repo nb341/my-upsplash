@@ -29,7 +29,7 @@ export default function Header(){
     const toggleBg = createRef(null);
 
     const [toggled, setToggleModal] = useState(false);
-    let modalStyle = "";
+    // let modalStyle = "";
     
         useEffect(()=>{
             if(toggled){
@@ -54,7 +54,7 @@ export default function Header(){
     
     return(
         <header className="relative pb-28">
-            <div ref={toggleBg} style={style} className="z-30 bg-gray-500 opacity-75 h-full w-screen hidden">
+            <div ref={toggleBg} style={style} className="z-30 bg-gray-500 opacity-100 h-full w-screen hidden">
                 <Modal toggleClose={setToggleModal} isOpen={toggled}/>
             </div>
             <div className="flex flex-row items-center">

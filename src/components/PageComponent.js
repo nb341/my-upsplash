@@ -27,8 +27,6 @@ const Page = ()=>{
     }
 
     const isPrime = (num)=>{
-        if(num==0 || num==1) return false;
-        if(num==2) return true;
         for(let i=2; i*i>=num;i++){
             if(num%i==0) return false;
         }
@@ -36,16 +34,11 @@ const Page = ()=>{
     }
 
     const img = images.map((item,i)=>{
-        console.log(i)
-        if(isPrime(i+1)) {
-            return <Img className="w-96" id={i} photo_url={item.photo_url}/>
-         } else 
-         {
-             return <Img className="w-96"/>
-            }
+            console.log("IS PRIME :"+isPrime(i+1))
+            return (isPrime(i+1)) ? <img key={i} className="rounded-lg" src={item.photo_url}/> : <img className="rounded-lg" style={{height: '582.48px'}} key={i} src={item.photo_url}/>
     })
         return(
-        <div>
+        <div className="grid grid-cols-3 gap-12">
            {img}
         </div>
     )
