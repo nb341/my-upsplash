@@ -11,7 +11,7 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 body{
     font-family: 'Noto Sans', sans-serif;
 }
@@ -21,3 +21,18 @@ body{
     font-weight: 700;
     color: #fff;
 }
+.montserrat{
+    font-family: 'Montserrat', sans-serif;
+}
+.delete-btn{
+    border: 1px solid #EB5757;
+    box-sizing: border-box;
+    border-radius: 38px;
+    color:#EB5757;
+}
+
+.delete-btn:hover{
+    background: #EB5757;
+    color: #fff;
+}
+

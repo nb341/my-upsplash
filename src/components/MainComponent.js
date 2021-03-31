@@ -6,7 +6,7 @@ import Header from './HeaderComponent';
 const Main = ()=>{
     return(
         
-        <div className="container mx-auto p-6">
+        <div className="container mx-auto py-6">
             <Header/>
             <Page/>
         </div>
