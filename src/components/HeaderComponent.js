@@ -33,10 +33,10 @@ export default function Header(){
     
         useEffect(()=>{
             if(toggled){
-                ReactDOM.findDOMNode(toggleBg.current).classList.remove("hidden");
+                toggleBg.current.classList.remove("hidden");
             }
             else{
-                ReactDOM.findDOMNode(toggleBg.current).classList.add("hidden")
+                toggleBg.current.classList.add("hidden")
             }
            
             console.log(toggled)

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 const Page = ()=>{
     const [images, setImages] = useState([]);
@@ -9,6 +9,9 @@ const Page = ()=>{
         
 
     // }
+
+    const refs = useRef([]);
+    refs.current = [];
     useEffect(()=>{
         fetch('http://localhost:8000/api/',{
             credentials: 'same-origin'
@@ -32,13 +35,33 @@ const Page = ()=>{
      * use length of style value to track prev to alternate
      */
 
+    // function onMouseEnter(id){
+    //     refs.current[id+"btn"].classList.remove('hidden');
+    //     refs.current[id+"label"].classList.remove('hidden');
+    // }
+
+    // function onMouseLeave(id){
+    //     refs.current[id+"btn"].classList.add('hidden');
+    //     refs.current[id+"label"].classList.add('hidden');
+    // }
+
     function Image(props){
         console.log(props.id)
         return(
-            <div className="relative my-3 px-3 w-1/3 overflow-hidden sm:w-full md:w-1/2 lg:w-1/3">
-                <button className="montserrat absolute top-5 right-10 delete-btn py-2 px-6">delete</button>
-                <img id={props.id} className="rounded-3xl h-96" src={props.url}/>
-                <label className="montserrat font-bold absolute bottom-5 left-10 text-white text-lg">{props.label}</label>
+            <div 
+            className="relative"
+            >
+                <img className="rounded-3xl h-96 w-auto" src={props.url} alt={props.label.toString()}/>
+                <div className="overlay">
+                    <button
+                        className="montserrat absolute top-5 right-10 delete-btn py-2 px-6 text-lg">
+                            delete
+                    </button>
+                    <label 
+                        className="montserrat font-bold absolute bottom-5 left-10 text-white text-lg">{props.label}
+                    </label>
+                </div>
+         
             </div>
         )
     }
@@ -55,11 +78,10 @@ const Page = ()=>{
             if((i+1)%3==2){
                 style = lg;
             }
-
             return <Image key={i} label={item.label} id={i} url={item.photo_url}/>
     })
         return(
-        <div className="flex flex-wrap overflow-hidden xl:-mx-1">
+        <div className="grid grid-cols-3 gap-12">
            {img}
         </div>
     )

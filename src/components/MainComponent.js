@@ -7,8 +7,13 @@ const Main = ()=>{
     return(
         
         <div className="container mx-auto py-6">
-            <Header/>
-            <Page/>
+            <header>
+                <Header/>
+            </header>
+            <section>
+                <Page/>
+            </section>
+            
         </div>
         
     )
