@@ -2,12 +2,6 @@ import React, { Component } from 'react';
 
 class Modal extends Component{
 
-    //Closes modal and performs relevant reset actions if necessary
-
-
-    //on submit for form
-    //validators for form input using state etc
-    //when cancel reset state
     
     constructor(props){
         super(props)
@@ -15,7 +9,6 @@ class Modal extends Component{
             label: '',
             url: ''
         }
-        // this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.closeModal = this.closeModal.bind(this);
         this.inputLabel = React.createRef();
@@ -24,21 +17,16 @@ class Modal extends Component{
     }
 
    
-    // handleInputChange(event) {
-    //     const target = event.target;
-    //     const value = target.value;
-    //     const name = target.name;
-    //     this.setState({
-    //       [name]: value    
-    //     });
-    //   }
+
     closeModal(event){
         this.props.toggleClose(!this.props.isOpen);
     }
     handleSubmit(e){
-        e.preventDefault();
-        console.log(this.inputLabel.current.value)
-        console.log(this.inputUrl.current.value);
+     
+        let label = this.inputLabel.current.value;
+        let photoUrl = this.inputLabel.current.value;
+
+        this.props.postPhoto(label, photoUrl);
         this.closeModal()
     }
 

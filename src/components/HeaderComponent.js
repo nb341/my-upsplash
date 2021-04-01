@@ -6,7 +6,7 @@ import Modal from './ModalComponent';
 
 
 
-export default function Header(){
+export default function Header(props){
 
     /*
       build modal pop up to add photo
@@ -41,21 +41,12 @@ export default function Header(){
            
             console.log(toggled)
         });
-        
-        
-
-        
-        
-        
-    
-    
-  
 
     
     return(
         <header className="relative pb-28">
             <div ref={toggleBg} style={style} className="z-30 bg-gray-500 opacity-100 h-full w-screen hidden">
-                <Modal toggleClose={setToggleModal} isOpen={toggled}/>
+                <Modal toggleClose={setToggleModal} isOpen={toggled} postPhoto={props.postPhoto}/>
             </div>
             <div className="flex flex-row items-center">
                 <img className="h-8" src={logo}/>

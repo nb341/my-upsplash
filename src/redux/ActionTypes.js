@@ -1,0 +1,6 @@
+export const ADD_PHOTO = 'ADD_PHOTO';
+export const ADD_PHOTOS = 'ADD_PHOTOS';
+export const PHOTOS_LOADING = 'PHOTOS_LOADING';
+export const PHOTOS_FAILED = 'PHOTOS_FAILED';
+export const DELETE_PHOTO = 'DELETE_PHOTO';
+export const DELETE_PHOTO_FAILED = 'DELETE_PHOTO_FAILED';
