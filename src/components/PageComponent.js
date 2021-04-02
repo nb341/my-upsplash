@@ -1,4 +1,9 @@
-import React, { useEffect, useState, useRef } from "react";
+import React from "react";
+
+
+const required = (val) => val && val.length;
+const maxLength = (len) => (val) => !(val) || (val.length <= len);
+const minLength = (len) => (val) => val && (val.length >= len);
 
 function Images(props){
     return(
@@ -13,9 +18,9 @@ function Images(props){
                 >
                     delete
             </button>
-            <label 
-                className="montserrat font-bold absolute bottom-5 left-10 text-white text-lg">{props.imagelabel}
-            </label>
+            <h1
+                className="montserrat font-bold absolute bottom-5 left-10 text-white text-lg">{props.image.label}
+            </h1>
         </div>
  
     </div>
@@ -30,15 +35,17 @@ class Page extends React.Component{
             super(props);
         }
 
-       
-
+  
 
     render(){
+   
+
         return(
                 <div className="grid grid-cols-3 gap-12">
-                    {
-                        this.props.photos.photos.map((item,i)=>{
-                            return <Images key={i} image={item} deletePhoto={this.props.deletePhoto}/>
+                   
+                   {
+                       this.props.photos.photos.map((item,i)=>{
+                            return <Images key={item.id} image={item} deletePhoto={this.props.deletePhoto}/>
                         })
                     }
                 </div>

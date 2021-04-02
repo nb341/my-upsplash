@@ -1,12 +1,19 @@
 import * as ActionTypes from './ActionTypes';
 import { baseUrl } from '../shared/baseUrl';
 
-export const addPhoto = (photoId, photoUrl, label) => ({
+export const updateInput = (input) => (
+  {
+    type: ActionTypes.SEARCH_INPUT,
+    payload: {txt: input, len: input.trim().length},
+  }
+)
+
+export const addPhoto = (photo) => ({
     type: ActionTypes.ADD_PHOTO,
     payload: {
-        id: photoId,
-        label: label,
-        photo_url: photoUrl
+        id: photo.id,
+        label: photo.label,
+        photo_url: photo.photo_url
     }
 });
 
@@ -15,6 +22,7 @@ export const fetchPhotos = () =>(dispatch) =>{
     return fetch(baseUrl)
     .then(response => {
         if(response.ok){
+          
           return response;
         }
         else{
@@ -28,7 +36,7 @@ export const fetchPhotos = () =>(dispatch) =>{
             throw errmess;
     })
     .then(response => response.json())
-    .then(photos => dispatch((addPhotos(photos))))
+    .then(photos => {dispatch((addPhotos(photos)))})
     .catch(error => dispatch(photosFailed(error.message)));
 }
 
@@ -60,7 +68,10 @@ export const postPhoto = (label, photoUrl) => (dispatch) => {
             throw error;
       })
     .then(response => response.json())
-    .then(response => dispatch(addPhoto(response)))
+    .then(response => {
+        console.log(response)
+        dispatch(addPhoto(response));
+    })
     .catch(error =>  { 
         console.log('post photo', error.message); 
         alert('Your photo could not be posted\nError: '+error.message); 
@@ -82,9 +93,9 @@ export const addPhotos = (photos) => ({
     payload: photos
 });
 
-export const deletePhoto = (msg)=>({
+export const deletePhoto = (res)=>({
     type: ActionTypes.DELETE_PHOTO,
-    payload: msg
+    payload: res.id
 });
 
 export const deleteFailed = (errMsg) => ({
@@ -94,7 +105,7 @@ export const deleteFailed = (errMsg) => ({
 })
 
 export const deleteItem = (id) => (dispatch)=>{
-    return fetch(baseUrl+id,{
+    return fetch(baseUrl+id+'/',{
         method: "DELETE",
         body: JSON.stringify({id:id}),
         header:{
@@ -102,19 +113,18 @@ export const deleteItem = (id) => (dispatch)=>{
         },
         credentials: "same-origin"
     })
-    .then(response=>{
-        if(response.ok){
-            return response;
+    .then(response => {
+        if (response.ok) {
+          return response;
+        } else {
+          var error = new Error('Error ' + response.status + ': ' + response.statusText);
+          error.response = response;
+          throw error;
         }
-        else{
-            var err = new Error('Error '+response.status+" : "+response.statusText);
-            err.response = response;
-            throw err;
-        }
-    },
-    err=>{
-        throw err;
-    })
+      },
+      error => {
+            throw error;
+      })
     .then(response=> response.json())
     .then(response=>dispatch(deletePhoto(response)))
     .catch(err=>{
@@ -122,3 +132,5 @@ export const deleteItem = (id) => (dispatch)=>{
         dispatch(deleteFailed(err.message));
     })
 }
+
+

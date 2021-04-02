@@ -4,3 +4,7 @@ export const PHOTOS_LOADING = 'PHOTOS_LOADING';
 export const PHOTOS_FAILED = 'PHOTOS_FAILED';
 export const DELETE_PHOTO = 'DELETE_PHOTO';
 export const DELETE_PHOTO_FAILED = 'DELETE_PHOTO_FAILED';
+// export const IS_SEARCHING = 'IS_SEARCHING';
+// export const SUBMIT_SEARCH = 'SUBMIT_SEARCH';
+// export const SEARCH_EMPTY = 'SEARCH_EMPTY';
+export const SEARCH_INPUT = 'SEARCH_INPUT';

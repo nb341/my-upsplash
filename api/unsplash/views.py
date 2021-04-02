@@ -1,9 +1,7 @@
-from rest_framework.decorators import action
-from rest_framework.response import Response
-from rest_framework import permissions
 from .serializers import UnsplashSerializer
 from rest_framework import viewsets
 from .models import Unsplash
+from django.http import JsonResponse
 
 class UnsplashViewSet(viewsets.ModelViewSet):
     """
@@ -18,3 +16,9 @@ class UnsplashViewSet(viewsets.ModelViewSet):
 
     # def perform_create(self, serializer):
     #     serializer.save(owner=self.request.user)
+
+    def destroy(self, request, *args, **kwargs):
+        photo = self.get_object()
+        id = photo.id
+        photo.delete()
+        return JsonResponse({'id':id})

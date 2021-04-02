@@ -1,5 +1,4 @@
 import React, { createRef, useEffect, useState } from "react";
-import ReactDOM from 'react-dom';
 import logo from '../assets/my_unsplash_logo.svg';
 import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
 import Modal from './ModalComponent';
@@ -29,6 +28,7 @@ export default function Header(props){
     const toggleBg = createRef(null);
 
     const [toggled, setToggleModal] = useState(false);
+    const [searchText, setSearchText] = useState("");
     // let modalStyle = "";
     
         useEffect(()=>{
@@ -39,8 +39,13 @@ export default function Header(props){
                 toggleBg.current.classList.add("hidden")
             }
            
-            console.log(toggled)
-        });
+        },[toggleBg]);
+        
+        function searchChangeHandler(e){
+            e.preventDefault();
+            props.updateInput(e.target.value)
+        }
+
 
     
     return(
@@ -51,7 +56,13 @@ export default function Header(props){
             <div className="flex flex-row items-center">
                 <img className="h-8" src={logo}/>
                 <button className="relative z-10 left-10"><SearchOutlinedIcon className="h-4 w-4 text-gray-300"><SearchOutlinedIcon/></SearchOutlinedIcon></button>
-                <input type="text" className="z-0 border-2 border-gray-300 h-12 pl-12 rounded-lg text-sm focus:outline-none" placeholder="Search by name"/>
+                <input 
+                    type="text" 
+                    className="z-0 border-2 border-gray-300 h-12 pl-12 rounded-lg text-sm focus:outline-none" 
+                    placeholder="Search by name"
+                    onChange={(e)=>searchChangeHandler(e)}
+                    />
+                    {(props.search.len>0) && <p>Hello Bruh</p>}
                 <button onClick={(e)=> setToggleModal(!toggled)} id="add-photo" className="bg-green-500 rounded-md absolute top-0 right-0 p-3">Add a photo</button>
             </div>
         </header>

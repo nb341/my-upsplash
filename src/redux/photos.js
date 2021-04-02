@@ -17,7 +17,7 @@ export const Photos = (state = { errMess: null, photos:[]}, action) => {
         return {...state, isLoading: true, errMess: null, photos: []}
     
     case ActionTypes.DELETE_PHOTO:
-        return state.photos.filter((data,i) => i !== photos.id)
+        return {...state, photos: state.photos.filter((photo,i)=> photo.id!==action.payload)}
     case ActionTypes.DELETE_PHOTO_FAILED:
         return {...state, errMess: action.payload};
 
