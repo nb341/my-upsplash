@@ -20,7 +20,8 @@ export const Photos = (state = { errMess: null, photos:[]}, action) => {
         return {...state, photos: state.photos.filter((photo,i)=> photo.id!==action.payload)}
     case ActionTypes.DELETE_PHOTO_FAILED:
         return {...state, errMess: action.payload};
-
+    case ActionTypes.SEARCH_PHOTO:
+        return {...state, photos: state.photos.filter((photo, i)=> photo.label.substring(0, action.payload.len).toLowerCase()===action.payload.txt.toLowerCase())}
     default:
       return state;
   }

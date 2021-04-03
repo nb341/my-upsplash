@@ -8,6 +8,16 @@ export const updateInput = (input) => (
   }
 )
 
+export const updateSearchList = (input)=>(
+  {
+    type: ActionTypes.SEARCH_PHOTO,
+    payload: {
+      txt: input,
+      len: input.trim().length
+    }
+  }
+); 
+
 export const addPhoto = (photo) => ({
     type: ActionTypes.ADD_PHOTO,
     payload: {

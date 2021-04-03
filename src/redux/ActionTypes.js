@@ -8,3 +8,4 @@ export const DELETE_PHOTO_FAILED = 'DELETE_PHOTO_FAILED';
 // export const SUBMIT_SEARCH = 'SUBMIT_SEARCH';
 // export const SEARCH_EMPTY = 'SEARCH_EMPTY';
 export const SEARCH_INPUT = 'SEARCH_INPUT';
+export const SEARCH_PHOTO = 'SEARCH_PHOTO';

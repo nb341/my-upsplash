@@ -43,7 +43,11 @@ export default function Header(props){
         
         function searchChangeHandler(e){
             e.preventDefault();
-            props.updateInput(e.target.value)
+            props.updateInput(e.target.value);
+            props.updateSearchList(e.target.value);
+            if(e.target.value.length===0){
+                props.fetchPhotos();
+            }
         }
 
 
@@ -62,7 +66,6 @@ export default function Header(props){
                     placeholder="Search by name"
                     onChange={(e)=>searchChangeHandler(e)}
                     />
-                    {(props.search.len>0) && <p>Hello Bruh</p>}
                 <button onClick={(e)=> setToggleModal(!toggled)} id="add-photo" className="bg-green-500 rounded-md absolute top-0 right-0 p-3">Add a photo</button>
             </div>
         </header>

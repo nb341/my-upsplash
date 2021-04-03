@@ -3,7 +3,9 @@ import React from "react";
 import Page from './PageComponent';
 import Header from './HeaderComponent';
 import { connect } from 'react-redux';
-import { deleteItem, fetchPhotos, postPhoto, updateInput } from '../redux/ActionCreators';
+import { deleteItem, fetchPhotos, postPhoto, updateInput, updateSearchList } from '../redux/ActionCreators';
+
+//Note to self delete search reducer, not needed anymore and combine it with photo reducer to filter image set
 
 const mapStateToProps = state => {
   return {
@@ -15,6 +17,7 @@ const mapDispatchToProps = dispatch => ({
   fetchPhotos: ()=> {dispatch(fetchPhotos())},
   postPhoto: (label, photoUrl)=> dispatch(postPhoto(label, photoUrl)),
   deletePhoto: (id) => dispatch(deleteItem(id)),
+  updateSearchList: (text) => dispatch(updateSearchList(text)),
   updateInput: (text) => dispatch(updateInput(text))
 });
 
@@ -39,6 +42,8 @@ class Main extends React.Component{
                     photos={this.props.photos}
                     search = {this.props.search}
                     updateInput={this.props.updateInput}
+                    updateSearchList = {this.props.updateSearchList}
+                    fetchPhotos={this.props.fetchPhotos}
                     />
             </header>
             <section>
