@@ -1,5 +1,0 @@
-web: cd api && pip install -r requirements.txt
-web: cd unsplash && yarn build-prod
-web: cd .. && ./manage.py migrate
-web: manage.py runserver 0.0.0.0:5000
-web: gunicorn api.wsgi

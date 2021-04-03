@@ -1,9 +1,9 @@
 
 .cache/
 coverage/
-api/unsplash/dist/*
-api/unsplash/node_modules/
-api/unsplash/*.log
+unsplash/dist/*
+unsplash/node_modules/
+unsplash/*.log
 
 # OS generated files
 .DS_Store
