@@ -28,7 +28,7 @@ export default function Header(props){
     const toggleBg = createRef(null);
 
     const [toggled, setToggleModal] = useState(false);
-    const [searchText, setSearchText] = useState("");
+    const [resultText, setResultText] = useState(false);
     // let modalStyle = "";
     
         useEffect(()=>{
@@ -45,6 +45,13 @@ export default function Header(props){
             e.preventDefault();
             props.updateInput(e.target.value);
             props.updateSearchList(e.target.value);
+            // alert(props.photos.photos.length)
+            // if(props.photos.length==0){
+            //     setResultText(true)
+            // }
+            // else{
+            //     setResultText(false);
+            // }
             if(e.target.value.length===0){
                 props.fetchPhotos();
             }
