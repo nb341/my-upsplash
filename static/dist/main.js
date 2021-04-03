@@ -40065,7 +40065,7 @@ function Header(props) {
     className: "flex flex-row items-center"
   }, /*#__PURE__*/_react.default.createElement("img", {
     className: "h-8",
-    src: "static/dist/my_unsplash_logo.af3a8966.svg"
+    src: "media/my_unsplash_logo.svg"
   }), /*#__PURE__*/_react.default.createElement("button", {
     className: "relative z-10 left-10"
   }, /*#__PURE__*/_react.default.createElement(_SearchOutlined.default, {
@@ -42490,7 +42490,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.baseUrl = void 0;
-var baseUrl = 'http://localhost:8000/unsplash/api/';
+var baseUrl = 'https://my-unsplashh.herokuapp.com/unsplash/api/';
 exports.baseUrl = baseUrl;
 },{}],"redux/ActionCreators.js":[function(require,module,exports) {
 "use strict";
@@ -43155,7 +43155,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35261" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33519" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

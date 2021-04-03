@@ -65,7 +65,7 @@ export default function Header(props){
                 <Modal toggleClose={setToggleModal} isOpen={toggled} postPhoto={props.postPhoto}/>
             </div>
             <div className="flex flex-row items-center">
-                <img className="h-8" src='static/dist/my_unsplash_logo.af3a8966.svg'/>
+                <img className="h-8" src='media/my_unsplash_logo.svg'/>
                 <button className="relative z-10 left-10"><SearchOutlinedIcon className="h-4 w-4 text-gray-300"><SearchOutlinedIcon/></SearchOutlinedIcon></button>
                 <input 
                     type="text" 
