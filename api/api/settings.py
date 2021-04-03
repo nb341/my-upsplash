@@ -126,6 +126,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
 CORS_ALLOW_HEADERS = [
     'accept',
     'accept-encoding',

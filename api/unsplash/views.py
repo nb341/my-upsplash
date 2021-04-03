@@ -2,6 +2,7 @@ from .serializers import UnsplashSerializer
 from rest_framework import viewsets
 from .models import Unsplash
 from django.http import JsonResponse
+from django.shortcuts import render
 
 class UnsplashViewSet(viewsets.ModelViewSet):
     """
@@ -22,3 +23,7 @@ class UnsplashViewSet(viewsets.ModelViewSet):
         id = photo.id
         photo.delete()
         return JsonResponse({'id':id})
+
+
+def index(request, *args, **kwargs):
+    return render(request, 'index.html')

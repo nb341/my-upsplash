@@ -8,5 +8,6 @@ router.register(r'api', views.UnsplashViewSet)
 
 # The API URLs are now determined automatically by the router.
 urlpatterns = [
-    path('', include(router.urls)),
+    path('unsplash/', include(router.urls)),
+    path('', views.index, name="index")
 ]
