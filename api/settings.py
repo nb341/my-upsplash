@@ -25,7 +25,7 @@ SECRET_KEY = '3nmdri#m-tstm_&hzz5#^-362@-2v7va0v5k_xtur*m3zdj)b&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://my-unsplashh.herokuapp.com/, 127.0.0.1:8000']
 
 
 # Application definition
