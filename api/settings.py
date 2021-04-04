@@ -26,6 +26,8 @@ SECRET_KEY = '3nmdri#m-tstm_&hzz5#^-362@-2v7va0v5k_xtur*m3zdj)b&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+CORS_ORIGIN_ALLOW_ALL = True
+
 ALLOWED_HOSTS = ['my-unsplashh.herokuapp.com', '127.0.0.1', 'localhost']
 
 
