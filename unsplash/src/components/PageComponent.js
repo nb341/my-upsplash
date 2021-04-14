@@ -49,7 +49,8 @@ class Page extends React.Component{
                             return <Images key={item.id} image={item} deletePhoto={this.props.deletePhoto}/>
                         }) 
                     }
-                    {this.props.photos.photos.length==0 && <p className="text-lg p-3 text-red-500 font-black">We can not find what you seek :(</p>}
+                    {(this.props.photos.photos.length==0 && this.props.search.len>0) && <p className="text-lg p-3 text-red-500 font-black">We can not find what you seek :(</p>}
+                    {this.props.pho}
                 </div>
                 </div>
             )
