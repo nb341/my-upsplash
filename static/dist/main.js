@@ -28380,9 +28380,9 @@ var Page = /*#__PURE__*/function (_React$Component) {
           image: item,
           deletePhoto: _this.props.deletePhoto
         });
-      }), this.props.photos.photos.length == 0 && /*#__PURE__*/_react.default.createElement("p", {
+      }), this.props.photos.photos.length == 0 && this.props.search.len > 0 && /*#__PURE__*/_react.default.createElement("p", {
         className: "text-lg p-3 text-red-500 font-black"
-      }, "We can not find what you seek :(")));
+      }, "We can not find what you seek :("), this.props.pho));
     }
   }]);
 
