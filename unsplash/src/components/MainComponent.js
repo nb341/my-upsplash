@@ -35,7 +35,7 @@ class Main extends React.Component{
     render(){
         return(
 
-        <div className="container mx-auto py-6">
+        <div className="container mx-auto py-6 px-12">
             <header>
                 <Header 
                     postPhoto={this.props.postPhoto} 
