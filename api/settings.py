@@ -150,7 +150,7 @@ CORS_ALLOWED_ORIGINS = [
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:1234',
     'http://127.0.0.1:1234',
-    'https://my-unsplashh.herokuapp.com'
+    'https://my-unsplash-2.herokuapp.com/'
 ]
 
 # Static files (CSS, JavaScript, Images)
