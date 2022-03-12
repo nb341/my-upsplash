@@ -70,7 +70,7 @@ class Modal extends Component{
                 </div>
                 <div className="flex justify-end py-4">
                     <button type="button" onClick={this.closeModal} className="text-base text-gray-400 font-medium pr-6">Cancel</button>
-                    <input type="submit" value="Submit" className="bg-green-500 text-white rounded-lg px-4 h-14 text-base font-bold"/>
+                    <input type="submit" value="Submit" className="bg-green-500 text-white rounded-md px-4 py-2 text-base font-bold"/>
                 </div>
                 </form>
             </div>

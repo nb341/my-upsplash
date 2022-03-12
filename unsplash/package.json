@@ -8,35 +8,35 @@
   "license": "ISC",
   "scripts": {
     "clean": "rm dist/bundle.js",
-    "start": "parcel src/index.js --out-dir ../static/dist --out-file main.js",
-    "build-prod": "parcel build src/index.js --out-dir ../static/dist --out-file main.js",
-    "cypress:open": "cypress open"
+    "start": "parcel src/index.js --out-dir ../static/dist --out-file main.js --port 3000",
+    "build-prod": "parcel build src/index.js --out-dir ../static/dist --out-file main.js"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
-    "postcss": "^7",
+    "parcel": "^2.0.0-nightly.1010",
     "postcss-flexbugs-fixes": "^4",
     "postcss-preset-env": "^6.7.0",
-    "react": "^15.3.0 || ^16.0.0",
-    "react-dom": "^0.14.7 || ^15.0.0 || ^16.0.0",
-    "react-redux": "^4.0.0 || ^5.0.3 || ^7.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
     "react-redux-form": "^1.16.14",
-    "react-redux-forms": "^0.2.0",
-    "redux": "^3.0.0 || ^4.0.0",
+    "redux": "^4.1.2",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.3.0",
-    "tailwindcss": "^2.0.1-compat"
+    "redux-thunk": "^2.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",
     "@babel/preset-env": "^7.13.12",
     "@babel/preset-react": "^7.12.13",
-    "autoprefixer": "^7",
+    "autoprefixer": "^10.4.2",
     "cypress": "^6.8.0",
     "eslint": "^7.22.0",
     "eslint-plugin-react": "^7.23.1",
     "parcel-bundler": "^1.12.5",
-    "postcss-modules": "^4.0.0"
+    "postcss": "^8.1.0",
+    "postcss-loader": "^4.1.0",
+    "postcss-modules": "^4.0.0",
+    "tailwindcss": "^2.0.1"
   }
 }
