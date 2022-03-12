@@ -12,8 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
-import whitenoise
-import django_heroku
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -146,14 +145,14 @@ CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:8000',
     'http://127.0.0.1:1234',
     'https://images.unsplash.com',
-    'https://my-unsplash-nb.herokuapp.com/'
+    'https://my-unsplash-nb.herokuapp.com'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:8000',
     'http://127.0.0.1:8000',
     'https://images.unsplash.com',
-    'https://my-unsplash-nb.herokuapp.com/'
+    'https://my-unsplash-nb.herokuapp.com'
 ]
 
 # Static files (CSS, JavaScript, Images)
@@ -178,4 +177,3 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_ROOT = BASE_DIR/'media/'
 
 MEDIA_URL = '/media/'
-django_heroku.settings(locals())
