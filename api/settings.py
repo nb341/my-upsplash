@@ -28,7 +28,7 @@ DEBUG = True
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-ALLOWED_HOSTS = ['my-unsplashh.herokuapp.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['my-unsplash-nb.herokuapp.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -145,14 +145,14 @@ CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:8000',
     'http://127.0.0.1:1234',
     'https://images.unsplash.com',
-    'https://my-unsplash-nb.herokuapp.com'
+    'my-unsplash-nb.herokuapp.com'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:8000',
     'http://127.0.0.1:8000',
     'https://images.unsplash.com',
-    'https://my-unsplash-nb.herokuapp.com'
+    'my-unsplash-nb.herokuapp.com'
 ]
 
 # Static files (CSS, JavaScript, Images)
