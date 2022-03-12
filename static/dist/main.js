@@ -43660,7 +43660,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.baseUrl = void 0;
-var baseUrl = 'https://my-unsplash-nb.herokuapp.com//unsplash/api/';
+var baseUrl = 'https://my-unsplash-nb.herokuapp.com/unsplash/api/';
 exports.baseUrl = baseUrl;
 },{}],"redux/ActionCreators.js":[function(require,module,exports) {
 "use strict";

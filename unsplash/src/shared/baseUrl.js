@@ -1,1 +1,1 @@
-export const baseUrl = 'https://my-unsplash-nb.herokuapp.com//unsplash/api/';
+export const baseUrl = 'https://my-unsplash-nb.herokuapp.com/unsplash/api/';
